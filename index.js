@@ -7,6 +7,11 @@ let priceElement = document.getElementById("book-price-input")
 let booksContainerElement = document.getElementById("books-container")
 
 const addNewBook = () => {
+    if (nameElement.value === '' || authorElement.value === '') {
+        alert("Name or Author input is empty! Please try again...")
+        return
+    }
+
     let newBook = {
         name: nameElement.value,
         author: authorElement.value,
@@ -16,6 +21,10 @@ const addNewBook = () => {
     booksList.push(newBook)
 
     loadBooks()
+
+    nameElement.value = ''
+    authorElement.value = ''
+    priceElement.value = ''
 }
 
 const loadBooks = () => {
@@ -26,14 +35,14 @@ const loadBooks = () => {
                         <th>Price</th>
                     </tr>`
 
-    for(let book of booksList){
+    for (let book of booksList) {
         table += `<tr>
                     <td>${book.name}</td>
                     <td>${book.author}</td>
                     <td>${book.price}</td>
                  </tr>`
-    }    
-    
+    }
+
     table += `</table>`
 
     booksContainerElement.innerHTML = table
