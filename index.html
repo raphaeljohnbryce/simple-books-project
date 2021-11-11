@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadBooks()">
+    <h1>Books Shop</h1>
+
+    <label>Book Name:</label>
+    <input type="text" id="book-name-input" />
+    <br><br>
+
+    <label>Book Author:</label>
+    <input type="text" id="book-author-input" />
+    <br><br>
+
+    <label>Price:</label>
+    <input type="number" id="book-price-input" />
+    <br><br>
+
+    <button onclick="addNewBook()">Add</button>
+    <br><br>
+
+    <div id="books-container"></div>
+</body>
+<script src="index.js"></script>
+
+</html>
