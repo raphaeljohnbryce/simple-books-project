@@ -1,5 +1,4 @@
 let booksList = []
-let bookIdCounter = 0
 
 let nameElement = document.getElementById("book-name-input")
 let authorElement = document.getElementById("book-author-input")
@@ -13,8 +12,10 @@ const addNewBook = () => {
         return
     }
 
+    let newId = Math.floor(Math.random() * 10000)
+
     let newBook = {
-        id: bookIdCounter++,
+        id: newId, // TO DO: to fix in local storage task
         name: nameElement.value,
         author: authorElement.value,
         price: Number(priceElement.value)
